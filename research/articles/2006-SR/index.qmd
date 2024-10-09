@@ -34,4 +34,3 @@ citation:
 ## Abstract
 
 Social and political sciences are divided, with respect to research, between two worlds: quantitative research and qualitative research. Although this divide is principially accepted as artificial and in fact the two types of research are complementary, in everyday practice it can be easily detected a more or less strong orientation to one of the two poles. This paper presents a third way in research, one that is trying to bridge the two worlds, managind to solve the perceived weaknesses of the qualitative research by introducing a mathematical algorithm (Ragin, 1987). This type of qualitative analysis is therefore gaining trust, eliminating different subjective perspectives. Results are replicable; applying the same methodology, each researcher reaches the same conclusion.
-
