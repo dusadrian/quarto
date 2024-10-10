@@ -20,14 +20,15 @@ pub-info:
       url: http://www.arsociologie.ro/rezumat/440-dusa-2-2006
       icon: fa-solid fa-scroll
     - name: PDF
-      url: 2006-QCA-SR.pdf
+      url: 2004-SR.pdf
       icon: fa-solid fa-file-pdf
 citation:
   type: article-journal
   url: http://www.arsociologie.ro/rezumat/440-dusa-2-2006
   publisher: "Asociația Română de Sociologie"
   container-title: "Sociologie Românească"
-  volume: 2
+  volume: 4
+  issue: 2
   page: 161-169
 ---
 

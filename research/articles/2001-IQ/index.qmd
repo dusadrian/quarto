@@ -21,7 +21,7 @@ pub-info:
       url: https://iassistquarterly.com/index.php/iassist/article/view/736
       icon: fa-solid fa-scroll
     - name: PDF
-      url: 2001-IASSISTQ.pdf
+      url: 2001-IQ.pdf
       icon: fa-solid fa-file-pdf
 citation:
   type: article-journal

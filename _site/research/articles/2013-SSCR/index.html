@@ -6,10 +6,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-10-03">
-<meta name="description" content="using parallelization with OpenMP and Gurobi">
+<meta name="author" content="Alrik Thiem">
+<meta name="author" content="Adrian Dușa">
+<meta name="dcterms.date" content="2013-01-01">
+<meta name="description" content="Describes the software landscape in the QCA field, in a time when the R package QCA was under development.">
 
-<title>Significant speed increase in package QCA – Adrian Dușa</title>
+<title>Boolean Minimization in Social Science Research: A Review of Current Software for Qualitative Comparative Analysis (QCA) – Adrian Dușa</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,24 +27,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../logo.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../logo.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,25 +81,40 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-5B3S7E955Z', { 'anonymize_ip': true});
 </script>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: #1b455f;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: #1b455f;
+background: #a4cbe2;
+      }
+</style>
 
 
-<link rel="stylesheet" href="../../html/styles.css">
-<meta name="twitter:title" content="Significant speed increase in package QCA – Adrian Dușa">
-<meta name="twitter:description" content="using parallelization with OpenMP and Gurobi">
-<meta name="twitter:image" content="https://adriandusa.eu/blog/2024-10-03-qca-openmp-gurobi/parallel.png">
-<meta name="twitter:image-height" content="640">
-<meta name="twitter:image-width" content="928">
+<link rel="stylesheet" href="../../../html/styles.css">
+<meta name="twitter:title" content="Boolean Minimization in Social Science Research: A Review of Current Software for Qualitative Comparative Analysis (QCA) – Adrian Dușa">
+<meta name="twitter:description" content="Describes the software landscape in the QCA field, in a time when the R package QCA was under development.">
+<meta name="twitter:image" content="https://adriandusa.eu/research/articles/2013-SSCR/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Adrian Dușa</span>
     </a>
   </div>
@@ -108,19 +125,19 @@ gtag('config', 'G-5B3S7E955Z', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog/index.html"> 
+    <a class="nav-link" href="../../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../research/index.html"> 
+    <a class="nav-link" href="../../../research/index.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../cv/index.html"> 
+    <a class="nav-link" href="../../../cv/index.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -131,84 +148,130 @@ gtag('config', 'G-5B3S7E955Z', { 'anonymize_ip': true});
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block research default toc-left page-columns page-full">
+    <div class="quarto-title-banner page-columns page-full">
+        <div class="quarto-title column-body">
+            <h1 class="title">Boolean Minimization in Social Science Research: A Review of Current Software for Qualitative Comparative Analysis (QCA)</h1>
+
+            
+                        <div>
+                <div class="description">
+                    <p>Describes the software landscape in the QCA field, in a time when the R package QCA was under development.</p>
+                </div>
+            </div>
+            
+                                    <div class="quarto-categories">
+                                <div class="quarto-category">QCA</div>
+                                <div class="quarto-category">Boolean minimization</div>
+                            </div>
+                                </div>
+    </div>
+
+        <div class="project-details">
+        <div class="publication-content">
+            <p></p>
+        </div>
+                <ul class="project-links">
+                        <li class="project-link">
+
+                <a href="https://journals.sagepub.com/doi/10.1177/0894439313478999"><i class="fa-solid fa-scroll"></i> Journal </a>
+            </li>
+                        <li class="project-link">
+
+                <a href="2013-SSCR.pdf"><i class="fa-solid fa-file-pdf"></i> PDF </a>
+            </li>
+                    </ul>
+            </div>
+
+    
+    <div class="quarto-title-meta-author">
+      <div class="quarto-title-meta-heading">Authors</div>
+      <div class="quarto-title-meta-heading">Affiliations</div>
+      
+        <div class="quarto-title-meta-contents">
+        <p class="author">Alrik Thiem </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+            <p class="affiliation">
+                Swiss Federal Institute of Technology Zurich
+              </p>
+          </div>
+        <div class="quarto-title-meta-contents">
+        <p class="author"><a href="https://adriandusa.eu">Adrian Dușa</a> <a href="https://orcid.org/0000-0002-3525-9253" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+      </div>
+      <div class="quarto-title-meta-contents">
+            <p class="affiliation">
+                <a href="https://www.unibuc.ro">
+                University of Bucharest
+                </a>
+              </p>
+          </div>
+      </div>
+
+    <div class="quarto-title-meta">
+
+          
+        <div>
+        <div class="quarto-title-meta-heading">Published</div>
+        <div class="quarto-title-meta-contents">
+          <p class="date">2013</p>
+        </div>
+      </div>
+      
+        
+      </div>
+      
+
+    
+</header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Significant speed increase in package QCA</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">R,</div>
-    <div class="quarto-category">QCA</div>
-    <div class="quarto-category">OpenMP</div>
-    <div class="quarto-category">Gurobi</div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    using parallelization with OpenMP and Gurobi
-  </div>
-</div>
-
-
-<div class="quarto-title-meta">
-
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">October 3, 2024</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<!--
-https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/
--->
-<p>The upcoming release version 3.23 of the package <a href="https://cran.r-project.org/web/packages/QCA/index.html">QCA</a> will bring a significant speed increase for the minimization process, by a factor of about 10 times on my computer. This achievement has two sources:</p>
-<ul>
-<li>parallelizing the search process to find the prime implicants</li>
-<li>adding the option to use the <a href="https://www.gurobi.com">Gurobi</a> optimizer for solving the prime implicants chart</li>
-</ul>
-<p>The parallelization process is made possible by using the OpenMP API, which is available on most modern systems. Depending on the workstation’s architecture, the speed increase is larger and larger the more cores are available. In my case, the parallelization accounts for about 7 times, on a MacBookPro with a M2 Max processor having 12 cores.</p>
-<p>Using OpenMP, however, is not automatically enabled by the CRAN servers. It needs to be installed by the user on the local machine, and at least for the MacOS systems CRAN has some <a href="https://mac.r-project.org/openmp/">detailed instructions</a> on how to do this. I did not find similar instructions for the Windows systems, but I assume that <a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools</a> should be installed.</p>
-<p>These command line tools are necessary to re-build the package QCA from source, to enable the OpenMP API. Installing this local version of the package, assuming that OpenMP is available, will do the trick.</p>
-<p>The next speed improvement factor is due to the Gurobi optimizer. By default, the package QCA uses the open source <a href="https://cran.r-project.org/web/packages/lpSolve/index.html">lpSolve</a> package to solve the prime implicants chart. This is a very good solver, but it has obvious limits at very large and sparce such charts. Gurobi, on the other hand, is a different story. It is the fastest, industrial strength solver, that was recently made available for no cost for academic users.</p>
-<div class="text-center">
-<p><img src="lpSolveGurobi.png" class="img-fluid" style="width:12cm"></p>
-</div>
-<p>The figure above shows the difference in speed between Gurobi and lpSolve, for randomly generated PI charts with 60 to 70 columns (the equivalent of the observed positive configurations / minterms in QCA) and 1000 prime implicants on the rows. The difference is almost exponential, in some situations Gurobi is up to 100 times faster, with an average of 35 times for the maximum of 70 columns.</p>
-<p>When package QCA detects the Gurobi solver, it will use that instead of lpSolve, and revert back only if there is something wrong in the solving process (for instance Gurobi might not find a valid license, and stop with an error).</p>
-<p>Kudos to the Gurobi team for making this solver available, it makes a massive point of improvement for the Boolean minimization process. Users have to register on the Gurobi website, using their institutional email address, and request an academic license key that can be used to activate the Gurobi package. They also provide <a href="https://www.gurobi.com/documentation/current/refman/r_ins_the_r_package.html">clear instructions</a> on how to install the R package <strong>gurobi</strong>.</p>
-<p>Once these are installed, package QCA will do the rest and, function of the number of available cores, will show a dramatic increase in speed.</p>
-<p><br></p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{dușa2024,
-  author = {Dușa, Adrian},
-  title = {Significant Speed Increase in Package {QCA}},
-  date = {2024-10-03},
-  url = {https://adriandusa.eu/blog/2024-10-03-qca-openmp-gurobi/},
+
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>Besides an increase in the number of empirical applications, the widening landscape of tailored computer programs attests to the success of qualitative comparative analysis (QCA) as a social research method. Users now have the choice between three graphical user interface (GUI) and three command line interface (CLI) solutions. In addition to different functional foci, each program possesses several technical particularities, some of which the vast majority of end users remain unaware of. Since these particularities may influence results and in turn substantive conclusions, this review is a timely undertaking. More specifically, we compare the two most common GUIs fs/QCA and Tosmana as well as the CLI QCA. By reanalyzing data from a sociological study on rural grassroots associations in Norway, major differences and similarities with respect to truth table construction, minimization algorithms, and prime implicant chart management are illustrated.</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{thiem2013,
+  author = {Thiem, Alrik and Dușa, Adrian},
+  publisher = {Sage},
+  title = {Boolean {Minimization} in {Social} {Science} {Research:} {A}
+    {Review} of {Current} {Software} for {Qualitative} {Comparative}
+    {Analysis} {(QCA)}},
+  journal = {Social Science Computer Review},
+  volume = {31},
+  number = {4},
+  pages = {505-521},
+  date = {2013-03-06},
+  url = {https://journals.sagepub.com/doi/10.1177/0894439313478999},
+  doi = {10.1177/0894439313478999},
+  issn = {0894-4393},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-dușa2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Dușa, Adrian. 2024. <span>“Significant Speed Increase in Package
-QCA.”</span> October 3, 2024. <a href="https://adriandusa.eu/blog/2024-10-03-qca-openmp-gurobi/">https://adriandusa.eu/blog/2024-10-03-qca-openmp-gurobi/</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-thiem2013" class="csl-entry quarto-appendix-citeas" role="listitem">
+Thiem, Alrik, and Adrian Dușa. 2013. <span>“Boolean Minimization in
+Social Science Research: A Review of Current Software for Qualitative
+Comparative Analysis (QCA).”</span> <em>Social Science Computer
+Review</em> 31 (4): 505–21. <a href="https://doi.org/10.1177/0894439313478999">https://doi.org/10.1177/0894439313478999</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -637,7 +700,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <p><span class="faux-block"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> 2019–2024 Adrian Dușa</span> <span class="faux-block">All content licensed under<br><a href="https://creativecommons.org/licenses/by/4.0/"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> Creative Commons CC BY 4.0</a></span></p>
 </div>   
     <div class="nav-footer-center">
-<p><span class="faux-block"><i class="fa-brands fa-orcid" aria-label="orcid"></i> <strong>ORCID</strong> <a href="https://orcid.org/0000-0002-3525-9253">0000-0002-3525-9253</a></span> <span class="faux-block"><i class="fa-solid fa-key" aria-label="key"></i> <a href="../../public_key.asc.txt">PGP public key</a>   <i class="fa-solid fa-fingerprint" aria-label="fingerprint"></i> Fingerprint:<br><span class="fingerprint">FD97 F3CF F262 6C89 F16E<br> DCA8 CF1C 6FE7 50B7 B237</span></span></p>
+<p><span class="faux-block"><i class="fa-brands fa-orcid" aria-label="orcid"></i> <strong>ORCID</strong> <a href="https://orcid.org/0000-0002-3525-9253">0000-0002-3525-9253</a></span> <span class="faux-block"><i class="fa-solid fa-key" aria-label="key"></i> <a href="../../../public_key.asc.txt">PGP public key</a>   <i class="fa-solid fa-fingerprint" aria-label="fingerprint"></i> Fingerprint:<br><span class="fingerprint">FD97 F3CF F262 6C89 F16E<br> DCA8 CF1C 6FE7 50B7 B237</span></span></p>
 </div>
     <div class="nav-footer-right">
 <p><span class="faux-block">Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a></span> <span class="faux-block"><a href="https://github.com/dusadrian/academic">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></span></p>
