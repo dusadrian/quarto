@@ -4,7 +4,7 @@ date: 10-03-2024
 description: "using parallelization with OpenMP and Gurobi"
 image: parallel.png
 twitter-card:
-  image: "parallel.png"
+  image: "parallel.jpg"
 categories: # self-defined categories
   - R,
   - QCA
@@ -35,7 +35,7 @@ Using OpenMP, however, is not automatically enabled by the CRAN servers. It need
 
 These command line tools are necessary to re-build the package QCA from source, to enable the OpenMP API. Installing this local version of the package, assuming that OpenMP is available, will do the trick.
 
-The next speed improvement factor is due to the Gurobi optimizer. By default, the package QCA uses the open source [lpSolve](https://cran.r-project.org/web/packages/lpSolve/index.html) package to solve the prime implicants chart. This is a very good solver, but it has obvious limits at very large and sparce such charts. Gurobi, on the other hand, is a different story. It is the fastest, industrial strength solver, that was recently made available for no cost for academic users.
+The next speed improvement factor is due to the Gurobi optimizer. By default, the package QCA uses the open source [lpSolve](https://cran.r-project.org/web/packages/lpSolve/index.html) package to solve the prime implicants chart. This is a very good solver, but it has obvious limits at very large and sparce such charts. Gurobi, on the other hand, is a different story. It is the fastest, industrial strength solver, that was recently made freely available for academic users.
 
 ::: text-center
 ![](lpSolveGurobi.png){width="12cm"}

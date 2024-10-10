@@ -84,7 +84,7 @@ gtag('config', 'G-5B3S7E955Z', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../../html/styles.css">
 <meta name="twitter:title" content="Significant speed increase in package QCA – Adrian Dușa">
 <meta name="twitter:description" content="using parallelization with OpenMP and Gurobi">
-<meta name="twitter:image" content="https://adriandusa.eu/blog/2024-10-03-qca-openmp-gurobi/parallel.png">
+<meta name="twitter:image" content="https://adriandusa.eu/blog/2024-10-03-qca-openmp-gurobi/parallel.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -185,7 +185,7 @@ https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/
 <p>The parallelization process is made possible by using the OpenMP API, which is available on most modern systems. Depending on the workstation’s architecture, the speed increase is larger and larger the more cores are available. In my case, the parallelization accounts for about 7 times, on a MacBookPro with a M2 Max processor having 12 cores.</p>
 <p>Using OpenMP, however, is not automatically enabled by the CRAN servers. It needs to be installed by the user on the local machine, and at least for the MacOS systems CRAN has some <a href="https://mac.r-project.org/openmp/">detailed instructions</a> on how to do this. I did not find similar instructions for the Windows systems, but I assume that <a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools</a> should be installed.</p>
 <p>These command line tools are necessary to re-build the package QCA from source, to enable the OpenMP API. Installing this local version of the package, assuming that OpenMP is available, will do the trick.</p>
-<p>The next speed improvement factor is due to the Gurobi optimizer. By default, the package QCA uses the open source <a href="https://cran.r-project.org/web/packages/lpSolve/index.html">lpSolve</a> package to solve the prime implicants chart. This is a very good solver, but it has obvious limits at very large and sparce such charts. Gurobi, on the other hand, is a different story. It is the fastest, industrial strength solver, that was recently made available for no cost for academic users.</p>
+<p>The next speed improvement factor is due to the Gurobi optimizer. By default, the package QCA uses the open source <a href="https://cran.r-project.org/web/packages/lpSolve/index.html">lpSolve</a> package to solve the prime implicants chart. This is a very good solver, but it has obvious limits at very large and sparce such charts. Gurobi, on the other hand, is a different story. It is the fastest, industrial strength solver, that was recently made freely available for academic users.</p>
 <div class="text-center">
 <p><img src="lpSolveGurobi.png" class="img-fluid" style="width:12cm"></p>
 </div>
