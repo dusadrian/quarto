@@ -10,8 +10,8 @@ author:
     orcid: 0000-0002-3525-9253
     attributes:
       corresponding: true
-    affiliation: University of Bucharest
-    affiliation-url: https://www.unibuc.ro
+    affiliation: Institute for Quality of Life Research
+    affiliation-url: https://www.iccv.ro/en/
 categories:
   - RODA
   - DDI

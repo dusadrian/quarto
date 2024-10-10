@@ -10,8 +10,8 @@ author:
     orcid: 0000-0002-3525-9253
     attributes:
       corresponding: true
-    affiliation: University of Bucharest
-    affiliation-url: https://www.unibuc.ro
+    affiliation: Department of Sociology, University of Bucharest
+    affiliation-url: https://sas.unibuc.ro/en
   - name: Alrik Thiem
     affiliation: Swiss Federal Institute of Technology Zurich
 categories:

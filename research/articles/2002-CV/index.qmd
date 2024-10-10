@@ -8,11 +8,14 @@ author:
     orcid: 0000-0002-3525-9253
     attributes:
       corresponding: true
-    affiliation: University of Bucharest
+    affiliation: Institute for Quality of Life Research
+    affiliation-url: https://www.iccv.ro/en/
   - name: Dana Nițulescu
     affiliation: Institute for Quality of Life Research
+    affiliation-url: https://www.iccv.ro/en/
   - name: Mariana Dan
     affiliation: Institute for Quality of Life Research
+    affiliation-url: https://www.iccv.ro/en/
 categories:
   - RODA
 pub-info:

@@ -6,21 +6,21 @@ author:
   - name: Alina Hossu
     attributes:
       corresponding: true
-    affiliation: University of Bucharest
-    affiliation-url: https://www.unibuc.ro
+    affiliation: Centre for Environmental Research and Impact Studies, University of Bucharest
+    affiliation-url: https://ccmesi.ro
     orcid: 0000-0002-0493-4965
   - name: Ioan Cristian Iojă
-    affiliation: University of Bucharest
-    affiliation-url: https://www.unibuc.ro
+    affiliation: Centre for Environmental Research and Impact Studies, University of Bucharest
+    affiliation-url: https://ccmesi.ro
     orcid: 0000-0001-6106-5105
   - name: Maria Pătroescu
-    affiliation: University of Bucharest
-    affiliation-url: https://www.unibuc.ro
+    affiliation: Centre for Environmental Research and Impact Studies, University of Bucharest
+    affiliation-url: https://ccmesi.ro
   - name: Adrian Dușa
     url: https://adriandusa.eu
     orcid: 0000-0002-3525-9253
-    affiliation: University of Bucharest
-    affiliation-url: https://www.unibuc.ro
+    affiliation: Department of Sociology, University of Bucharest
+    affiliation-url: https://sas.unibuc.ro/en
   - name: Anna M. Hersperger
     affiliation: Swiss Federal Research Institute
     affiliation-url: https://www.wsl.ch/en/

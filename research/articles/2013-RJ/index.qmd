@@ -13,8 +13,8 @@ author:
   - name: Adrian Dușa
     url: https://adriandusa.eu
     orcid: 0000-0002-3525-9253
-    affiliation: University of Bucharest
-    affiliation-url: https://www.unibuc.ro
+    affiliation: Department of Sociology, University of Bucharest
+    affiliation-url: https://sas.unibuc.ro/en
 categories:
   - QCA
   - Boolean minimization

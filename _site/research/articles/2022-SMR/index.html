@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Adrian Dușa">
-<meta name="dcterms.date" content="2001-01-01">
-<meta name="description" content="The first article describing the beginning or RODA, the Romanian Social Data Archive.">
+<meta name="dcterms.date" content="2022-01-01">
+<meta name="description" content="This paper is a formal response to the recent critique of QCA from CNA proponents">
 
-<title>index – Adrian Dușa</title>
+<title>Critical Tension: Sufficiency and Parsimony in QCA – Adrian Dușa</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -42,6 +42,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -98,9 +100,9 @@ background: #a4cbe2;
 
 
 <link rel="stylesheet" href="../../../html/styles.css">
-<meta name="twitter:title" content="Adrian Dușa">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://adriandusa.eu/research/articles/2001-IASSIST-Quarterly/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
+<meta name="twitter:title" content="Critical Tension: Sufficiency and Parsimony in QCA – Adrian Dușa">
+<meta name="twitter:description" content="This paper is a formal response to the recent critique of QCA from CNA proponents">
+<meta name="twitter:image" content="https://adriandusa.eu/research/articles/2022-SMR/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -148,18 +150,19 @@ background: #a4cbe2;
 <header id="title-block-header" class="quarto-title-block research default toc-left page-columns page-full">
     <div class="quarto-title-banner page-columns page-full">
         <div class="quarto-title column-body">
-            <h1 class="title">A Data Archive for Social Sciences in Romania</h1>
+            <h1 class="title">Critical Tension: Sufficiency and Parsimony in QCA</h1>
 
             
                         <div>
                 <div class="description">
-                    <p>The first article describing the beginning or RODA, the Romanian Social Data Archive.</p>
+                    <p>This paper is a formal response to the recent critique of QCA from CNA proponents</p>
                 </div>
             </div>
             
                                     <div class="quarto-categories">
-                                <div class="quarto-category">RODA</div>
-                                <div class="quarto-category">DDI</div>
+                                <div class="quarto-category">QCA</div>
+                                <div class="quarto-category">CNA</div>
+                                <div class="quarto-category">Correctness</div>
                             </div>
                                 </div>
     </div>
@@ -170,10 +173,12 @@ background: #a4cbe2;
         </div>
                 <ul class="project-links">
                         <li class="project-link">
-                <a href="https://iassistquarterly.com/index.php/iassist/article/view/736"><i class="fa-solid fa-scroll"></i> IASSIST</a>
+
+                <a href="https://journals.sagepub.com/doi/abs/10.1177/0049124119882456"><i class="fa-solid fa-scroll"></i> Journal </a>
             </li>
                         <li class="project-link">
-                <a href="2001-IASSISTQ.pdf"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+
+                <a href="2022-SMR.pdf"><i class="fa-solid fa-file-pdf"></i> PDF </a>
             </li>
                     </ul>
             </div>
@@ -188,7 +193,9 @@ background: #a4cbe2;
       </div>
       <div class="quarto-title-meta-contents">
             <p class="affiliation">
-                University of Bucharest
+                <a href="https://sas.unibuc.ro/en">
+                Department of Sociology, University of Bucharest
+                </a>
               </p>
           </div>
       </div>
@@ -199,7 +206,7 @@ background: #a4cbe2;
         <div>
         <div class="quarto-title-meta-heading">Published</div>
         <div class="quarto-title-meta-contents">
-          <p class="date">2001</p>
+          <p class="date">2022</p>
         </div>
       </div>
       
@@ -231,14 +238,28 @@ background: #a4cbe2;
 
 <section id="abstract" class="level2">
 <h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>At a time when the Romanian data archive did not exist, efforts were being made by the Institute for Quality of Life Research to organize its datasets in a systematic way, especially for comparative purposes. Feeling the potential of a data archive, following Western examples, the director of the institute Prof.&nbsp;Zamfir (then also the Dean of the Faculty of Sociology and Social Work) quickly realized that a Romanian data archive was necessary.</p>
-<p>The initial name for this archive was RSDA, from the Romanian Social Data Archive, but its later trademark abbreviation changed to RODA, meaning the same thing.</p>
-<p>This article describes the situation from that time, in a Romanian (social) scientific environment that was still in its infancy after having been oppressed for decades, by the communist regime, and the grass roots of what will eventually become a national data archive for the social sciences.</p>
+<p>The main objective of the qualitative comparative analysis is to find solutions that display sufficient configurations of causal conditions leading to the presence of an outcome. These solutions should be less complex than the original observed configurations, as parsimonious as possible, without sacrificing the sufficiency requirement. Sufficiency and parsimony are two requirements that act in opposition, and an optimal solution is one that accommodates both. There are different search strategies that lead to different types of solutions, with an ongoing debate about which solution type is closest to the true, underlying causal structure. This article presents the different logics behind each simplification system in order to explain how and why they lead to different results and introduces the concept of “robust sufficiency” to clear the debate. It analyses the correctness ratios for the different solution type and provides an improved set of procedures to measure correctness that captures the best features from each system. Out of the competition between the conservative and the parsimonious search strategies, the intermediate solution emerges as the best hybrid that is suitable for causal analysis, outperforming the parsimonious solution in recovering a known (even parsimonious) causal structure.</p>
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{dușa2022,
+  author = {Dușa, Adrian},
+  publisher = {Sage},
+  title = {Critical {Tension:} {Sufficiency} and {Parsimony} in {QCA}},
+  journal = {Sociological Methods \&amp; Research},
+  volume = {51},
+  number = {2},
+  date = {2022-11-18},
+  url = {https://journals.sagepub.com/doi/abs/10.1177/0049124119882456},
+  doi = {10.1177/0049124119882456},
+  issn = {0049-1241},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-dușa2022" class="csl-entry quarto-appendix-citeas" role="listitem">
+Dușa, Adrian. 2022. <span>“Critical Tension: Sufficiency and Parsimony
+in QCA.”</span> <em>Sociological Methods &amp; Research</em> 51 (2). <a href="https://doi.org/10.1177/0049124119882456">https://doi.org/10.1177/0049124119882456</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -660,6 +681,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="faux-block"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> 2019–2024 Adrian Dușa</span> <span class="faux-block">All content licensed under<br><a href="https://creativecommons.org/licenses/by/4.0/"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> Creative Commons CC BY 4.0</a></span></p>
+</div>   
+    <div class="nav-footer-center">
+<p><span class="faux-block"><i class="fa-brands fa-orcid" aria-label="orcid"></i> <strong>ORCID</strong> <a href="https://orcid.org/0000-0002-3525-9253">0000-0002-3525-9253</a></span> <span class="faux-block"><i class="fa-solid fa-key" aria-label="key"></i> <a href="../../../public_key.asc.txt">PGP public key</a>   <i class="fa-solid fa-fingerprint" aria-label="fingerprint"></i> Fingerprint:<br><span class="fingerprint">FD97 F3CF F262 6C89 F16E<br> DCA8 CF1C 6FE7 50B7 B237</span></span></p>
+</div>
+    <div class="nav-footer-right">
+<p><span class="faux-block">Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a></span> <span class="faux-block"><a href="https://github.com/dusadrian/academic">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></span></p>
+</div>
+  </div>
+</footer>
 
 
 

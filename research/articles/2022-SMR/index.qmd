@@ -11,8 +11,8 @@ author:
     orcid: 0000-0002-3525-9253
     attributes:
       corresponding: true
-    affiliation: University of Bucharest
-    affiliation-url: https://www.unibuc.ro
+    affiliation: Department of Sociology, University of Bucharest
+    affiliation-url: https://sas.unibuc.ro/en
 categories:
   - QCA
   - CNA
@@ -23,7 +23,7 @@ pub-info:
       url: https://journals.sagepub.com/doi/abs/10.1177/0049124119882456
       icon: fa-solid fa-scroll
     - name: PDF
-      url: 2019-SMR.pdf
+      url: 2022-SMR.pdf
       icon: fa-solid fa-file-pdf
 citation:
   type: article-journal
