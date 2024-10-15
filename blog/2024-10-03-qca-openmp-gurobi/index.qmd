@@ -2,7 +2,7 @@
 title: "Significant speed increase in package QCA"
 date: 10-03-2024
 description: "using parallelization with OpenMP and Gurobi"
-image: parallel.png
+image: parallel.jpg
 twitter-card:
   image: "parallel.jpg"
 categories: # self-defined categories
