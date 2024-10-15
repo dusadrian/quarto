@@ -13,6 +13,14 @@ about:
       href: https://scholar.google.ro/citations?user=BLyda7YAAAAJ&hl=en
       aria-label: Google Scholar
       text: "{{< ai google-scholar size=lg >}} Scholar"
+    - icon: clarivate
+      href: https://www.webofscience.com/wos/author/record/D-9324-2017
+      aria-label: Clarivate
+      text: "{{< ai clarivate size=lg >}} Clarivate"
+    - icon: scopus
+      href: https://www.scopus.com/authid/detail.uri?authorId=55222052300
+      aria-label: Scopus
+      text: "{{< ai scopus size=lg >}} Scopus"
     - icon: orcid
       href: https://orcid.org/0000-0002-3525-9253
       aria-label: ORCID
