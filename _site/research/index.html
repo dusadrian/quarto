@@ -101,34 +101,6 @@ ul.task-list li input[type="checkbox"] {
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-working-papers .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
-      
-      searchColumns: [],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-working-papers'] = new List('listing-working-papers', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
     const listingTargetEl = window.document.querySelector('#listing-books .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
@@ -143,34 +115,6 @@ ul.task-list li input[type="checkbox"] {
 
     window['quarto-listings'] = window['quarto-listings'] || {};
     window['quarto-listings']['listing-books'] = new List('listing-books', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-book-chapters .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
-      
-      searchColumns: [],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-book-chapters'] = new List('listing-book-chapters', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -342,11 +286,11 @@ window.Quarto = {
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2024)</span>
-            <span class="listing-author">Chun-Hui Gao, Chengjie Chen, Turgut Akyol, Adrian Dușa, Guangchuang Yu, Bin Cao, Peng Cai</span>.
+            <span class="listing-author" itemprop="author">Chun-Hui Gao, Chengjie Chen, Turgut Akyol, Adrian Dușa, Guangchuang Yu, Bin Cao, Peng Cai</span>.
             <a href="../research/articles/2024-IMETA/index.html">
-            <span class="listing-title">ggVennDiagram: Intuitive Venn diagram software extended</span>
+            <span class="listing-title" itemprop="name">ggVennDiagram: Intuitive Venn diagram software extended</span>
             
             </a>.
             
@@ -370,11 +314,11 @@ window.Quarto = {
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2022)</span>
-            <span class="listing-author">Adrian Dușa</span>.
+            <span class="listing-author" itemprop="author">Adrian Dușa</span>.
             <a href="../research/articles/2022-SMR/index.html">
-            <span class="listing-title">Critical Tension: Sufficiency and Parsimony in QCA</span>
+            <span class="listing-title" itemprop="name">Critical Tension: Sufficiency and Parsimony in QCA</span>
             
             </a>.
             
@@ -406,11 +350,11 @@ window.Quarto = {
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2019)</span>
-            <span class="listing-author">Alina Hossu, Ioan Cristian Iojă, Maria Pătroescu, Adrian Dușa, Anna M. Hersperger</span>.
+            <span class="listing-author" itemprop="author">Alina Hossu, Ioan Cristian Iojă, Maria Pătroescu, Adrian Dușa, Anna M. Hersperger</span>.
             <a href="../research/articles/2019-SUST/index.html">
-            <span class="listing-title">Dispute Resolution and Collaborative Decision-Making: What Accounts for Their Effectiveness? The Case of Romania</span>
+            <span class="listing-title" itemprop="name">Dispute Resolution and Collaborative Decision-Making: What Accounts for Their Effectiveness? The Case of Romania</span>
             
             </a>.
             
@@ -450,11 +394,11 @@ window.Quarto = {
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2018)</span>
-            <span class="listing-author">Adrian Dușa</span>.
+            <span class="listing-author" itemprop="author">Adrian Dușa</span>.
             <a href="../research/articles/2018-RJ/index.html">
-            <span class="listing-title">Consistency Cubes. A Fast, Efficient Method for exact Boolean Minimization</span>
+            <span class="listing-title" itemprop="name">Consistency Cubes. A Fast, Efficient Method for exact Boolean Minimization</span>
             
             </a>.
             
@@ -486,11 +430,11 @@ window.Quarto = {
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2016)</span>
-            <span class="listing-author">Alrik Thiem, Reto Spöhel, Adrian Dușa</span>.
+            <span class="listing-author" itemprop="author">Alrik Thiem, Reto Spöhel, Adrian Dușa</span>.
             <a href="../research/articles/2016-PA/index.html">
-            <span class="listing-title">Enhancing Sensitivity Diagnostics for Qualitative Comparative Analysis: A Combinatorial Approach</span>
+            <span class="listing-title" itemprop="name">Enhancing Sensitivity Diagnostics for Qualitative Comparative Analysis: A Combinatorial Approach</span>
             
             </a>.
             
@@ -514,11 +458,11 @@ window.Quarto = {
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2015)</span>
-            <span class="listing-author">Adrian Dușa, Alrik Thiem</span>.
+            <span class="listing-author" itemprop="author">Adrian Dușa, Alrik Thiem</span>.
             <a href="../research/articles/2015-JMS/index.html">
-            <span class="listing-title">Enhancing the Minimization of Boolean and Multivalue Output Functions With eQMC</span>
+            <span class="listing-title" itemprop="name">Enhancing the Minimization of Boolean and Multivalue Output Functions With eQMC</span>
             
             </a>.
             
@@ -554,11 +498,11 @@ window.Quarto = {
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2013)</span>
-            <span class="listing-author">Alrik Thiem, Adrian Dușa</span>.
+            <span class="listing-author" itemprop="author">Alrik Thiem, Adrian Dușa</span>.
             <a href="../research/articles/2013-RJ/index.html">
-            <span class="listing-title">QCA: A Package for Qualitative Comparative Analysis</span>
+            <span class="listing-title" itemprop="name">QCA: A Package for Qualitative Comparative Analysis</span>
             
             </a>.
             
@@ -586,11 +530,11 @@ window.Quarto = {
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2013)</span>
-            <span class="listing-author">Alrik Thiem, Adrian Dușa</span>.
+            <span class="listing-author" itemprop="author">Alrik Thiem, Adrian Dușa</span>.
             <a href="../research/articles/2013-SSCR/index.html">
-            <span class="listing-title">Boolean Minimization in Social Science Research: A Review of Current Software for Qualitative Comparative Analysis (QCA)</span>
+            <span class="listing-title" itemprop="name">Boolean Minimization in Social Science Research: A Review of Current Software for Qualitative Comparative Analysis (QCA)</span>
             
             </a>.
             
@@ -618,11 +562,11 @@ window.Quarto = {
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2011)</span>
-            <span class="listing-author">Adrian Dușa, Valeriu Frunzaru</span>.
+            <span class="listing-author" itemprop="author">Adrian Dușa, Valeriu Frunzaru</span>.
             <a href="../research/articles/2011-IRSR/index.html">
-            <span class="listing-title">The Visual Analogue Scale. An Alternative to the Likert Type Response Scales. An Alternative to the Likert Type Response Scales</span>
+            <span class="listing-title" itemprop="name">The Visual Analogue Scale. An Alternative to the Likert Type Response Scales. An Alternative to the Likert Type Response Scales</span>
             
             </a>.
             
@@ -658,11 +602,11 @@ window.Quarto = {
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2011)</span>
-            <span class="listing-author">Axel Marx, Adrian Dușa</span>.
+            <span class="listing-author" itemprop="author">Axel Marx, Adrian Dușa</span>.
             <a href="../research/articles/2011-MIO/index.html">
-            <span class="listing-title">Crisp-Set Qualitative Comparative Analysis (csQCA), Contradictions and Consistency Benchmarks for Model Specification</span>
+            <span class="listing-title" itemprop="name">Crisp-Set Qualitative Comparative Analysis (csQCA), Contradictions and Consistency Benchmarks for Model Specification</span>
             
             </a>.
             
@@ -702,11 +646,11 @@ window.Quarto = {
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2010)</span>
-            <span class="listing-author">Adrian Dușa</span>.
+            <span class="listing-author" itemprop="author">Adrian Dușa</span>.
             <a href="../research/articles/2010-QQ/index.html">
-            <span class="listing-title">A mathematical approach to the Boolean minimization problem</span>
+            <span class="listing-title" itemprop="name">A mathematical approach to the Boolean minimization problem</span>
             
             </a>.
             
@@ -738,11 +682,11 @@ window.Quarto = {
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2007)</span>
-            <span class="listing-author">Adrian Dușa</span>.
+            <span class="listing-author" itemprop="author">Adrian Dușa</span>.
             <a href="../research/articles/2007-JBR/index.html">
-            <span class="listing-title">User manual for the QCA(GUI) package in R</span>
+            <span class="listing-title" itemprop="name">User manual for the QCA(GUI) package in R</span>
             
             </a>.
             
@@ -770,11 +714,11 @@ window.Quarto = {
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2006)</span>
-            <span class="listing-author">Adrian Dușa</span>.
+            <span class="listing-author" itemprop="author">Adrian Dușa</span>.
             <a href="../research/articles/2006-SR/index.html">
-            <span class="listing-title">QCA – Analiza Calitativă Comparativă. Aplicații, instrumente și potențial</span>
+            <span class="listing-title" itemprop="name">QCA – Analiza Calitativă Comparativă. Aplicații, instrumente și potențial</span>
             
             </a>.
             
@@ -798,11 +742,11 @@ window.Quarto = {
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2004)</span>
-            <span class="listing-author">Adrian Dușa</span>.
+            <span class="listing-author" itemprop="author">Adrian Dușa</span>.
             <a href="../research/articles/2003-ISSJ/index.html">
-            <span class="listing-title">Creating data services in new democracies. Experiences from a case study and related neighbours</span>
+            <span class="listing-title" itemprop="name">Creating data services in new democracies. Experiences from a case study and related neighbours</span>
             
             </a>.
             
@@ -826,11 +770,11 @@ window.Quarto = {
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2001)</span>
-            <span class="listing-author">Adrian Dușa</span>.
+            <span class="listing-author" itemprop="author">Adrian Dușa</span>.
             <a href="../research/articles/2001-IQ/index.html">
-            <span class="listing-title">A Data Archive for Social Sciences in Romania</span>
+            <span class="listing-title" itemprop="name">A Data Archive for Social Sciences in Romania</span>
             
             </a>.
             
@@ -858,11 +802,11 @@ window.Quarto = {
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2001)</span>
-            <span class="listing-author">Adrian Dușa, Dana Nițulescu, Mariana Dan</span>.
+            <span class="listing-author" itemprop="author">Adrian Dușa, Dana Nițulescu, Mariana Dan</span>.
             <a href="../research/articles/2002-CV/index.html">
-            <span class="listing-title">De la date disparate la o arhivă națională de date sociale</span>
+            <span class="listing-title" itemprop="name">De la date disparate la o arhivă națională de date sociale</span>
             
             </a>.
             
@@ -893,16 +837,16 @@ No matching items
 <div id="listing-books" class="quarto-listing quarto-listing-container-custom">
 <ol class="list publication-list" reversed="">
 
-    <li class="project" data-index="0" data-categories="QCA" data-listing-date-sort="1559336400000" data-listing-file-modified-sort="1729019328641" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="124">
+    <li class="project" data-index="0" data-categories="QCA" data-listing-date-sort="1559336400000" data-listing-file-modified-sort="1729019356194" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="124">
         <div class="project-content listing-pub-info">
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2019)</span>
-            <span class="listing-author">Adrian Dușa</span>.
+            <span class="listing-author" itemprop="author">Adrian Dușa</span>.
             <a href="../research/books/2019-QCA/index.html">
-            <span class="listing-title">QCA with R. A Comprehensive Resource</span>
+            <span class="listing-title" itemprop="name">QCA with R. A Comprehensive Resource</span>
             
             </a>.
             
@@ -926,11 +870,11 @@ No matching items
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2015)</span>
-            <span class="listing-author">Adrian Dușa, Bogdan Oancea, Nicoleta Caragea, Ciprian Alexandru, Nicolae Marius Jula, Ana Maria Dobre</span>.
+            <span class="listing-author" itemprop="author">Adrian Dușa, Bogdan Oancea, Nicoleta Caragea, Ciprian Alexandru, Nicolae Marius Jula, Ana Maria Dobre</span>.
             <a href="../research/books/2015-RAS/index.html">
-            <span class="listing-title">R cu aplicații în statistică</span>
+            <span class="listing-title" itemprop="name">R cu aplicații în statistică</span>
             
             </a>.
             
@@ -958,11 +902,11 @@ No matching items
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2014)</span>
-            <span class="listing-author">Adrian Dușa, Dietrich Nelle, Günter Stock, Gert G. Wagner</span>.
+            <span class="listing-author" itemprop="author">Adrian Dușa, Dietrich Nelle, Günter Stock, Gert G. Wagner</span>.
             <a href="../research/books/2014-FTF/index.html">
-            <span class="listing-title">Facing the Future. European Research Infrastructures for the Humanities and Social Sciences</span>
+            <span class="listing-title" itemprop="name">Facing the Future. European Research Infrastructures for the Humanities and Social Sciences</span>
             
             </a>.
             
@@ -990,11 +934,11 @@ No matching items
             <p></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(2014)</span>
-            <span class="listing-author">Adrian Dușa</span>.
+            <span class="listing-author" itemprop="author">Adrian Dușa</span>.
             <a href="../research/books/2014-EAC/index.html">
-            <span class="listing-title">Elemente de analiză comparativă</span>
+            <span class="listing-title" itemprop="name">Elemente de analiză comparativă</span>
             
             </a>.
             
@@ -1022,26 +966,14 @@ No matching items
 </section>
 <section id="book-chapters" class="level2">
 <h2 class="anchored" data-anchor-id="book-chapters">Book chapters</h2>
-<div id="listing-book-chapters" class="quarto-listing quarto-listing-container-custom">
-<ol class="list publication-list" reversed="">
+<div id="book-chapters">
 
-</ol>
-
-<div class="listing-no-matching d-none">
-No matching items
-</div>
 </div>
 </section>
 <section id="working-papers" class="level2">
 <h2 class="anchored" data-anchor-id="working-papers">Working papers</h2>
-<div id="listing-working-papers" class="quarto-listing quarto-listing-container-custom">
-<ol class="list publication-list" reversed="">
+<div id="working-papers">
 
-</ol>
-
-<div class="listing-no-matching d-none">
-No matching items
-</div>
 </div>
 
 

@@ -6,18 +6,18 @@ listing:
     sort: "date desc"
     template: ../html/research/publications.ejs
     categories: true
-  - id: working-papers
-    contents: "working-papers/*/index.qmd"
-    sort: "date desc"
-    template: ../html/research/publications.ejs
   - id: books
     contents: "books/*/index.qmd"
     sort: "date desc"
     template: ../html/research/publications.ejs
-  - id: book-chapters
-    contents: "book-chapters/*/index.qmd"
-    sort: "date desc"
-    template: ../html/research/publications.ejs
+  # - id: book-chapters
+  #   contents: "book-chapters/*/index.qmd"
+  #   sort: "date desc"
+  #   template: ../html/research/publications.ejs
+  # - id: working-papers
+  #   contents: "working-papers/*/index.qmd"
+  #   sort: "date desc"
+  #   template: ../html/research/publications.ejs
 page-layout: full
 include-back-link: false
 toc-location: right
