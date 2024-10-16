@@ -6,11 +6,11 @@
             <p><%= item['pub-info'].reference %></p>
         </div>
 
-        <div class="publication-info">
+        <div class="publication-info" itemscope itemtype="https://schema.org/ScholarlyArticle">
             <span class="listing-date">(<%= item.date %>)</span>
-            <span class="listing-author"><%= item.author %></span>.
+            <span class="listing-author" itemprop="author"><%= item.author %></span>.
             <a href="<%- item.path %>">
-            <span class="listing-title"><%= item.title %></span>
+            <span class="listing-title" itemprop="name"><%= item.title %></span>
             <% if (item.subtitle) { %>: <span class="listing-subtitle subtitle"><%= item.subtitle %></span><% } %>
             </a>.
             <% if (item["container-title-short"]) { %>
