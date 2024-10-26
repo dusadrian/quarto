@@ -10,10 +10,10 @@ listing:
     contents: "books/*/index.qmd"
     sort: "date desc"
     template: ../html/research/publications.ejs
-  # - id: book-chapters
-  #   contents: "book-chapters/*/index.qmd"
-  #   sort: "date desc"
-  #   template: ../html/research/publications.ejs
+  - id: chapters
+    contents: "chapters/*/index.qmd"
+    sort: "date desc"
+    template: ../html/research/publications.ejs
   # - id: working-papers
   #   contents: "working-papers/*/index.qmd"
   #   sort: "date desc"
@@ -41,10 +41,5 @@ Finally, it needs mentioning what I consider another one of my proud-worthy acco
 
 ## Book chapters
 
-::: {#book-chapters}
-:::
-
-## Working papers
-
-::: {#working-papers}
+::: {#chapters}
 :::
