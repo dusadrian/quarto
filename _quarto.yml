@@ -5,7 +5,7 @@ project:
 
 website:
   google-analytics: "G-5B3S7E955Z"
-  favicon: logo.png
+  favicon: "images/logo.png"
   twitter-card: true
   title: "Adrian Dușa"
   site-url: https://adriandusa.eu

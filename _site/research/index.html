@@ -29,7 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../logo.png" rel="icon" type="image/png">
+<link href="../images/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-listing/list.min.js"></script>
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -115,6 +115,34 @@ ul.task-list li input[type="checkbox"] {
 
     window['quarto-listings'] = window['quarto-listings'] || {};
     window['quarto-listings']['listing-books'] = new List('listing-books', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-chapters .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-project','listing-website','listing-format','listing-editor','listing-_quarto-vars','listing-language','listing-date-format','listing-title-block-banner','listing-title-block-banner-color','listing-toc','listing-toc-title','listing-toc-location','listing-execute','listing-type','listing-date','listing-title','listing-description','listing-author','listing-categories','listing-pub-info','listing-citation','listing-path','listing-outputHref','listing-date-modified','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-editor","listing-_quarto-vars","listing-language","listing-date-format","listing-title-block-banner","listing-title-block-banner-color","listing-toc","listing-toc-title","listing-toc-location","listing-execute","listing-type","listing-date","listing-title","listing-description","listing-author","listing-categories","listing-pub-info","listing-citation","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-chapters'] = new List('listing-chapters', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -263,10 +291,9 @@ window.Quarto = {
   <li><a href="#journal-articles" id="toc-journal-articles" class="nav-link active" data-scroll-target="#journal-articles">Journal articles</a></li>
   <li><a href="#books" id="toc-books" class="nav-link" data-scroll-target="#books">Books</a></li>
   <li><a href="#book-chapters" id="toc-book-chapters" class="nav-link" data-scroll-target="#book-chapters">Book chapters</a></li>
-  <li><a href="#working-papers" id="toc-working-papers" class="nav-link" data-scroll-target="#working-papers">Working papers</a></li>
   </ul>
 </nav>
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(20)</span></div><div class="category" data-category="Boolean minimization">Boolean minimization <span class="quarto-category-count">(5)</span></div><div class="category" data-category="CNA">CNA <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Comparative research">Comparative research <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Complexity">Complexity <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Configurational Analysis,">Configurational Analysis, <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Consistency">Consistency <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Contradictions">Contradictions <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Correctness">Correctness <span class="quarto-category-count">(1)</span></div><div class="category" data-category="DDI">DDI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Environmental conflicts">Environmental conflicts <span class="quarto-category-count">(1)</span></div><div class="category" data-category="GUI">GUI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Internal consistency">Internal consistency <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Joint action">Joint action <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Likert scale">Likert scale <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QCA">QCA <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Quine-McCluskey">Quine-McCluskey <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RODA">RODA <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Research methodology">Research methodology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Response scales">Response scales <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Romania">Romania <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Set theory">Set theory <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Shared motivation">Shared motivation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Venn diagram">Venn diagram <span class="quarto-category-count">(1)</span></div><div class="category" data-category="mvQCA">mvQCA <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(24)</span></div><div class="category" data-category="Boolean minimization">Boolean minimization <span class="quarto-category-count">(5)</span></div><div class="category" data-category="CNA">CNA <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Comparative research">Comparative research <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Complexity">Complexity <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Configurational Analysis,">Configurational Analysis, <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Consistency">Consistency <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Contradictions">Contradictions <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Correctness">Correctness <span class="quarto-category-count">(1)</span></div><div class="category" data-category="DDI">DDI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Archiving">Data Archiving <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Eastern Europe">Eastern Europe <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Environmental conflicts">Environmental conflicts <span class="quarto-category-count">(1)</span></div><div class="category" data-category="GUI">GUI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Internal consistency">Internal consistency <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Joint action">Joint action <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Likert scale">Likert scale <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QCA">QCA <span class="quarto-category-count">(14)</span></div><div class="category" data-category="Quine-McCluskey">Quine-McCluskey <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RODA">RODA <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Research Infrastructures">Research Infrastructures <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Research methodology">Research methodology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Response scales">Response scales <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Romania">Romania <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SSH">SSH <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Set Theory">Set Theory <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Set theory">Set theory <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Shared motivation">Shared motivation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Venn diagram">Venn diagram <span class="quarto-category-count">(1)</span></div><div class="category" data-category="mvQCA">mvQCA <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -966,14 +993,142 @@ No matching items
 </section>
 <section id="book-chapters" class="level2">
 <h2 class="anchored" data-anchor-id="book-chapters">Book chapters</h2>
-<div id="book-chapters">
+<div id="listing-chapters" class="quarto-listing quarto-listing-container-custom">
+<ol class="list publication-list" reversed="">
 
+    <li class="project" data-index="0" data-categories="QCA,Set Theory" data-listing-date-sort="1617224400000" data-listing-file-modified-sort="1729970357135" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="186">
+        <div class="project-content listing-pub-info">
+            <p></p>
+        </div>
+
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
+            <span class="listing-date">(2021)</span>
+            <span class="listing-author" itemprop="author">Adrian Dușa</span>.
+            <a href="../research/chapters/2021-CAUBA/index.html">
+            <span class="listing-title" itemprop="name">Comparative Analysis Using Boolean Algebra</span>
+            
+            </a>.
+            
+            <span class="listing-publication fst-italic">SAGE Research Methods Foundations</span>.
+            
+        </div>
+
+        
+            <div class="project-categories">
+                
+                    <div class="project-category"><a href="#category=QCA">
+                        QCA
+                    </a></div>
+                
+                    <div class="project-category"><a href="#category=Set Theory">
+                        Set Theory
+                    </a></div>
+                
+            </div>
+        
+    </li>
+
+    <li class="project" data-index="1" data-categories="QCA,Set Theory" data-listing-date-sort="1585688400000" data-listing-file-modified-sort="1729970567677" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="84">
+        <div class="project-content listing-pub-info">
+            <p></p>
+        </div>
+
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
+            <span class="listing-date">(2020)</span>
+            <span class="listing-author" itemprop="author">Adrian Dușa</span>.
+            <a href="../research/chapters/2020-STM/index.html">
+            <span class="listing-title" itemprop="name">Set Theoretic Methods</span>
+            
+            </a>.
+            
+            <span class="listing-publication fst-italic">The SAGE Handbook of Research Methods in Political Science and International Relations</span>.
+            
+        </div>
+
+        
+            <div class="project-categories">
+                
+                    <div class="project-category"><a href="#category=QCA">
+                        QCA
+                    </a></div>
+                
+                    <div class="project-category"><a href="#category=Set Theory">
+                        Set Theory
+                    </a></div>
+                
+            </div>
+        
+    </li>
+
+    <li class="project" data-index="2" data-categories="Research Infrastructures,SSH" data-listing-date-sort="1394748000000" data-listing-file-modified-sort="1729969156648" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="113">
+        <div class="project-content listing-pub-info">
+            <p></p>
+        </div>
+
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
+            <span class="listing-date">(2014)</span>
+            <span class="listing-author" itemprop="author">Adrian Dușa, Claudia Oellers, Simon Wolff</span>.
+            <a href="../research/chapters/2014-CAERI/index.html">
+            <span class="listing-title" itemprop="name">A Common Agenda for the European Research Infrastructures in the Social Sciences and Humanities</span>
+            
+            </a>.
+            
+            <span class="listing-publication fst-italic">Facing the Future. European Research Infrastructures for the Humanities and Social Sciences</span>.
+            
+        </div>
+
+        
+            <div class="project-categories">
+                
+                    <div class="project-category"><a href="#category=Research Infrastructures">
+                        Research Infrastructures
+                    </a></div>
+                
+                    <div class="project-category"><a href="#category=SSH">
+                        SSH
+                    </a></div>
+                
+            </div>
+        
+    </li>
+
+    <li class="project" data-index="3" data-categories="Data Archiving,Eastern Europe" data-listing-date-sort="1022878800000" data-listing-file-modified-sort="1729966262143" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="90">
+        <div class="project-content listing-pub-info">
+            <p></p>
+        </div>
+
+        <div class="publication-info" itemscope="" itemtype="https://schema.org/ScholarlyArticle">
+            <span class="listing-date">(2002)</span>
+            <span class="listing-author" itemprop="author">Adrian Dușa</span>.
+            <a href="../research/chapters/2002-SSDAEE/index.html">
+            <span class="listing-title" itemprop="name">The Romanian Social Science Archive</span>
+            
+            </a>.
+            
+            <span class="listing-publication fst-italic">Social Science Data Archive in Eastern Europe</span>.
+            
+        </div>
+
+        
+            <div class="project-categories">
+                
+                    <div class="project-category"><a href="#category=Data Archiving">
+                        Data Archiving
+                    </a></div>
+                
+                    <div class="project-category"><a href="#category=Eastern Europe">
+                        Eastern Europe
+                    </a></div>
+                
+            </div>
+        
+    </li>
+
+</ol>
+
+<div class="listing-no-matching d-none">
+No matching items
 </div>
-</section>
-<section id="working-papers" class="level2">
-<h2 class="anchored" data-anchor-id="working-papers">Working papers</h2>
-<div id="working-papers">
-
 </div>
 
 
