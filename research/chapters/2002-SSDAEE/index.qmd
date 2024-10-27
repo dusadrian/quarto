@@ -3,7 +3,7 @@ type: chapter
 date: 2002-06-01
 title: "The Romanian Social Science Archive"
 description: |
-  A common effort to foster data archiving in the Eastern Europe, escaping the former communist instinct of hiding information and protect public data against anyone.
+  A common effort to foster data archiving in the Eastern Europe, escaping the former communist instinct of hiding any information under the data protection flag.
 author:
   - name: Adrian Dușa
     url: https://adriandusa.eu
@@ -24,8 +24,9 @@ citation:
   editor:
     - name: Brigitte Hausstein
     - name: Paul de Guchteneire
-  container-title: "Social Science Data Archive in Eastern Europe"
+  container-title: "Social Science Data Archive in Eastern Europe. Results, Potentials and Prospects of the Archival Development."
+  page: 207-212
   publisher: "E. Ferger Verlag"
 ---
 
-<br> Once upon a time, the data archives for social science research were seen in the Western Europe only. The Council of European Social Science Data Archives (CESSDA), in collaboration with the International Asociation for Social Science Information Service & Technology (IASSIST) organized a dedicated workshop, intending to foster activity in the newly emerged countries from the Iron Curtain, in the Eastern Europe. This Amsterdam meeting was so promising that CESSDA went further organizing this network, in spite of a deep-rooted instinct of protecting data against any person or institution.
+<br> Once upon a time, the data archives for social science research were only seen in the Western Europe. The Council of European Social Science Data Archives (CESSDA), in collaboration with the International Asociation for Social Science Information Service & Technology (IASSIST) organized a dedicated workshop, intending to foster activity in the newly emerged countries from the Iron Curtain, in the Eastern Europe. That Amsterdam meeting was so promising that CESSDA went further organizing this network, overcoming a deep-rooted communist instinct of hiding data against any person or institution.
