@@ -1,12 +1,12 @@
 ---
 title: Curriculum vitæ
 description: "Adrian Dusa's CV"
-date: 2024-10-05
+date: 2024-10-27
 published-title: CV last updated
 engine: knitr
 freeze: false
 cv:
-  pdf: "2024-10-05-CV-Adrian-Dusa-English.pdf"
+  pdf: "2024-10-27-CV-Adrian-Dusa-English.pdf"
 ---
 
 ```{css, echo=FALSE}
